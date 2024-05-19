@@ -52,7 +52,7 @@ npm i http-server --save-dev
 
 создаем хостинг на гитхабе 
 git checkout -b gp
-для  папки со скомпилированным проектом для этого создадим папку docs
+для  папки со скомпилированным проектом для этого создадим папку docs в новой ветке gp
 ng build --output-path docs --base-href /ITLogia-Pizza-Angular-Test/
 можно в package.json scripts  добавить "build-gp": "ng build --output-path docs --base-href /ITLogia-Pizza-Angular-Test/"
 для короткой команды при обновлении на гите npm run build-gp
