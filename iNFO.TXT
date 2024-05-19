@@ -56,3 +56,11 @@ git checkout -b gp
 ng build --output-path docs --base-href /ITLogia-Pizza-Angular-Test/
 можно в package.json scripts  добавить "build-gp": "ng build --output-path docs --base-href /ITLogia-Pizza-Angular-Test/"
 для короткой команды при обновлении на гите npm run build-gp
+
+коммитим в новую ветку и git push -u origin gp
+настраиваем на github Build and deployment в ветке gp папку docs
+
+теперь работаем в мастере а выкладываем в ветку gp
+изменяем в мастере выкладываем на гитхаб после этого переключаемся на ветку gp 
+git merge master открывается редактор сохраняем изменения м выходим 
+далее запускаем сборку npm run build-gp далее git add + commit и git push
