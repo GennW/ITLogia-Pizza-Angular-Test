@@ -1,0 +1,44 @@
+
+<section class="order" id="order">
+    <div class="container">
+        <div class="order-text">
+            <div class="order-text-title double-title">
+                <span>
+                    <a routerLink="/order" [queryParams]="{product: formValues.productTitle + '+1 '}">Хватит думать!</a>
+                </span>
+                 Доставим заказ за 30 минут!
+            </div>
+            <div>
+                <a class="btn" (click)="ngOnDestroy()">Unsubscribe</a>
+            </div>
+            <div class="order-text-message" id="delivery">
+                Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже
+                на 1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся
+                нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+            </div>
+        </div>
+        <div class="order-form">
+            <div class="order-input-wrap">
+                <input class="order-input" CoolInput type="text" 
+                id="product-input" [coolInputDefaultBgColor]="'gray'" pInputText
+                    [coolInputFocusBgColor]="'red'" 
+                    placeholder="Пицца" [(ngModel)]="formValues.productTitle">
+
+            </div>
+            <div class="order-input-wrap">
+                <input class="order-input" type="text" id="adress-input" placeholder="Адрес доставки"
+                    [(ngModel)]="formValues.address">
+
+            </div>
+            <div class="order-input-wrap">
+                <input class="order-input" CoolInput type="text" id="phone-input" name="tel" placeholder="Телефон"
+                    [(ngModel)]="formValues.phone">
+
+            </div>
+            <button class="btn" id="create-order" (click)="createOrder()">Оформить заказ</button>
+        </div>
+        <div class="order-img">
+            <img src="assets/img/pizzzzza.png" alt="pizza">
+        </div>
+    </div>
+</section>

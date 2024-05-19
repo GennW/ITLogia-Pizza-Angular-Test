@@ -1,0 +1,22 @@
+<div class="product" *isChicken="product.description">
+    <div class="products-img" *ngIf="product.image">
+        <img src="{{product.image}}">
+    </div>
+    <!-- изменяем картинку если нет в products в image пустая строка -->
+    <div class="products-img" *ngIf="!product.image">
+        <img src="assets/img/pizzzzza.png">
+    </div>
+
+    <custom-title [title]="product.title"></custom-title>
+
+    <div class="products-text">{{product.description | wordUpper: ['томат', 'сыр', 'сос', 'соу']}}</div>
+    <div class="date">{{product.datetime | date: 'dd.MM.yyyy HH:mm'}}</div>
+    <div class="products-action">
+        <a class="btn btn-add-to-cart" id="no-touch" routerLink="/order" [queryParams]="{product: product.title}">
+            В корзину
+        </a>
+        <a class="btn btn-white" id="no-touch" [routerLink]="['/products', product.id]">
+            О товаре
+        </a>
+    </div>
+</div>

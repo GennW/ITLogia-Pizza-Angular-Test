@@ -1,0 +1,27 @@
+<section class="products">
+    <div class="container">
+        <h2 class="products-title">
+            Описание пиццы
+        </h2>
+        <div class="product-item">
+
+                <div class="products-img" *ngIf="product.image">
+                    <img src="{{product.image}}">
+                </div>
+                <div class="products-img" *ngIf="!product.image">
+                    <img src="assets/img/pizzzzza.png">
+                </div>
+
+                <custom-title [title]="product.title"></custom-title>
+            
+                <div class="products-text">{{product.description | wordUpper: ['томат', 'сыр', 'сос', 'соу']}}</div>
+                <div class="date">{{product.datetime | date: 'dd.MM.yyyy HH:mm'}}</div>
+                <div class="products-action">
+                    <a class="btn btn-add-to-cart" id="no-touch" routerLink="/order" [queryParams]="{product: product.title}">
+                        В корзину
+                    </a>
+                </div>
+
+        </div>
+    </div>
+</section>

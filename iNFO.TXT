@@ -1,0 +1,58 @@
+
+1. через npm i --save bootstrap
+2. в ручную:
+копируем bootstrap.css bootstrap.js
+в angular.json 
+            "styles": [
+              "src/styles.scss",
+              "src/assets/lib/bootsrap/bootstrap.css"
+            ],
+            "scripts": [
+              "src/assets/lib/bootsrap/bootstrap.js"
+            ]
+
+в файле ts объявляем declare var bootstrap: any;
+в ngOnInit пишем:
+    const myModalAlternative = new bootstrap.Modal('#myModal', {});
+    myModalAlternative.show();
+
+
+Typings 
+npm i @types/bootstrap тогда вместо declare var bootstrap: any; пишем
+import * as bootstrap from "bootstrap";
+
+ng-bootstrap
+ng add @ng-bootstrap/ng-bootstrap
+инжектируем в конструктор private modalService: NgbModal
+импортируем NgbModalModule в модуль
+
+вариант с templateRef:
+jоборачиваем блок папапа в <ng-template #popap>
+убрать class="modal" и вызвать this.modalService.open(popup, {})
+вариант с component:
+35:20 полноценный компонент
+
+
+45:40 Angular Material
+ng add @angular/material
+
+56:20 primeFaces
+npm install primeng --save
+npm install primeicons --save
+импортируем InputTextModule и добавляем в html pInputText
+
+1:02:30 Taiga UI
+
+1:01:20
+собираем проект ng build
+ng build --watch если для изменнения с отслеживанием
+установка сервера
+npm i http-server --save-dev
+запускаем  npx http-server dist/pizza
+
+создаем хостинг на гитхабе 
+git checkout -b gp
+для  папки со скомпилированным проектом для этого создадим папку docs
+ng build --output-path docs --base-href /ITLogia-Pizza-Angular-Test/
+можно в package.json scripts  добавить "build-gp": "ng build --output-path docs --base-href /ITLogia-Pizza-Angular-Test/"
+для короткой команды при обновлении на гите npm run build-gp
